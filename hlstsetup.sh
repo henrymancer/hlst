@@ -1,5 +1,7 @@
 #!/bin/sh
 
+BIN_DIR=$HOME/.local/bin
+
 print_header() {
     local term_width=$(tput cols)
     local text="$1"
@@ -32,8 +34,19 @@ set -x
 git clone https://github.com/henrymancer/hlst.git /tmp/hlst
 
 # Copy user config files
-cp /tmp/hlst/user-config/.* ~/
+cp /tmp/hlst/user-config/.* $HOME
 set +x
+
+if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
+    # Add the directory to PATH
+    export PATH="$PATH:$BIN_DIR"
+    # Add directory to PATH in ~/.bashrc
+    echo 'export PATH="$PATH:'$BIN_DIR'"' >> $HOME/.bashrc
+    echo "Added $BIN_DIR to PATH."
+fi
+
+cp /tmp/hlst/bin/* $BIN_DIR
+chmod +x -R $BIN_DIR
 
 print_header "CONFIGURATION COMPLETED. REMOVING TMPDIR"
 
