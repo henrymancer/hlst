@@ -103,7 +103,9 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
     # Add the directory to PATH
     export PATH="$PATH:$BIN_DIR"
     # Add directory to PATH in ~/.bashrc
-    echo 'export PATH="$PATH:'$BIN_DIR'"' >> $HOME/.bashrc
+    if ! grep -q 'export PATH="$PATH:'$BIN_DIR'"' $HOME/.bashrc; then
+        echo 'export PATH="$PATH:'$BIN_DIR'"' >> $HOME/.bashrc
+    fi
     echo "Added $BIN_DIR to PATH."
 fi
 
