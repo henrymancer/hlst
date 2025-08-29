@@ -36,5 +36,6 @@ cp /tmp/hlst/user-config/.* ~/
 set +x
 
 print_header "CONFIGURATION COMPLETED. REMOVING TMPDIR"
+
 # Remove all temporary files
 rm -rf /tmp/hlst
