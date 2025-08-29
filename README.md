@@ -5,7 +5,7 @@ This is a repo with all the tools, config, and scripts that I have made to impro
 ## Installing the tools
 To install, run the following commands:
 ``` {sh}
-$ curl https://github.com/henrymancer/hlst/blob/master/hlstsetup.sh?raw=true -o hlstsetup.sh
+$ curl https://github.com/henrymancer/hlst/blob/main/hlstsetup.sh?raw=true -o hlstsetup.sh
 $ chmod +x hlstsetup.sh
 $ ./hlstsetup.sh
 ```
