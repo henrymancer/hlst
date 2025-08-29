@@ -11,4 +11,6 @@ $ ./hlstsetup.sh
 ```
 
 ## Current features
-* `.vimrc` - Custom vim config.
+- `.vimrc` - Custom vim config.
+- **Binaries**
+    - `hdiskcheck.sh` - Check if disks are passing a usage threshold 
