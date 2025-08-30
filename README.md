@@ -12,7 +12,7 @@ $ ./hlstsetup.sh
 
 For a much shorter method, try the following:
 ``` {sh}
-$ curl tinyurl.com/hlstinstall | bash
+$ curl tinyurl.com/hlstinstall -L | bash
 ```
 
 ## Current features
