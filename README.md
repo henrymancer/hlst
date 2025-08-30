@@ -10,6 +10,11 @@ $ chmod +x hlstsetup.sh
 $ ./hlstsetup.sh
 ```
 
+For a much shorter method, try the following:
+``` {sh}
+$ curl tinyurl.com/hlstinstall | bash
+```
+
 ## Current features
 - `.vimrc` - Custom vim config.
 - **Binaries**
