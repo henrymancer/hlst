@@ -19,3 +19,4 @@ $ curl tinyurl.com/hlstinstall -L | bash
 - `.vimrc` - Custom vim config.
 - **Binaries**
     - `hdiskcheck.sh` - Check if disks are passing a usage threshold 
+
