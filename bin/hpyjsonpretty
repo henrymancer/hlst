@@ -1,0 +1,40 @@
+#!/bin/python
+# Henry's JSON Pretty feature
+import json
+import sys
+
+def main():
+    # Require either -s or -f flag
+    if len(sys.argv) < 3 or sys.argv[1] not in ['-s', '-f']:
+        print(f"Usage: {sys.argv[0]} [-s|-f] <argument>")
+        print("  -s: Treat argument as JSON string")
+        print("  -f: Treat argument as filename")
+        sys.exit(1)
+    
+    flag = sys.argv[1]
+    input_arg = " ".join(sys.argv[2:])  # Join all remaining arguments
+    
+    try:
+        if flag == "-f":
+            # Read JSON from file
+            with open(input_arg, 'r') as f:
+                data = json.load(f)
+        else:  # flag == "-s"
+            # Parse JSON from string
+            data = json.loads(input_arg)
+        
+        # Print prettified JSON
+        print(json.dumps(data, indent=4))
+        
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON: {e}")
+        sys.exit(1)
+    except FileNotFoundError as e:
+        print(f"Error: File not found: {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
